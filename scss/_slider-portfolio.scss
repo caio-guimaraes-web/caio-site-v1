@@ -1,0 +1,146 @@
+/* :::::::::::::::: slider - fazendo */
+/* .galeria {
+  //grid-column: 1 / -1;
+} */
+
+.slide-wrapper {
+  overflow: hidden;
+  //grid-column: 1 / -1;
+}
+
+.slide {
+  display: flex;
+}
+
+.slide:hover {
+  will-change: transform;
+}
+
+.slide li {
+  flex-shrink: 0;
+  width: 80vw;
+  max-width: 800px;
+  margin: 0 20px;
+
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  opacity: 0.8;
+  transform: scale(0.8);
+  transition: 0.4s;
+  cursor: pointer;
+
+  &:nth-child(1),
+  &:nth-child(4),
+  &:nth-child(6) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* custom */
+  max-height: 32vh;
+  @include breakpoint(desktop) {
+    max-height: 50vh;
+  }
+}
+
+.slide li.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.custom-controls {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  //grid-column: 1 / -1;
+  margin: 10px 50px 20px;
+  padding: 0;
+  @include breakpoint(desktop) {
+    margin: 10px 0 20px;
+  }
+}
+
+.custom-controls li {
+  opacity: 0.8;
+  transform: scale(0.8);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 2px;
+  //box-shadow: 0 2px 2px rgba(0, 0, 0, 0.5);
+  transition: 0.3s;
+
+  /* custom */
+  background: rgba(0, 0, 0, 0);
+  border: 2px solid $gray-brand-light;
+  cursor: pointer;
+  &:hover {
+    background: $gray-brand-light;
+  }
+}
+
+.custom-controls li.active {
+  opacity: 1;
+  transform: scale(1);
+  /* custom */
+  background: $gray-brand-medium;
+}
+
+.galeria {
+  .prev,
+  .next {
+    position: absolute;
+
+    background: url(../assets/svg/arrow-right01.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 40px;
+    border: none;
+    will-change: transform;
+    margin-top: -56px;
+    transition: 0.3s;
+    cursor: pointer;
+
+    &:hover {
+      -webkit-transform: scale3d(1.2, 1.2, 1.2);
+      transform: scale3d(1.2, 1.2, 1.2);
+    }
+    &:active {
+      -webkit-transform: scale3d(0.9, 0.9, 0.9);
+      transform: scale3d(0.9, 0.9, 0.9);
+    }
+  }
+  .next {
+    right: 5vw;
+    @include breakpoint(desktop) {
+      right: 30vw;
+    }
+  }
+  .prev {
+    transform: rotate(180deg);
+    left: 5vw;
+
+    @include breakpoint(desktop) {
+      left: 30vw;
+    }
+
+    &:hover {
+      -webkit-transform: scale3d(1.2, 1.2, 1.2) rotate(180deg);
+      transform: scale3d(1.2, 1.2, 1.2) rotate(180deg);
+    }
+    &:active {
+      -webkit-transform: scale3d(0.9, 0.9, 0.9) rotate(180deg);
+      transform: scale3d(0.9, 0.9, 0.9) rotate(180deg);
+    }
+  }
+}
+
+.slide-item-hc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

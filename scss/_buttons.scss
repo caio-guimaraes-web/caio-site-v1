@@ -1,0 +1,65 @@
+.btns {
+  display: inline-block;
+  padding: 10px 30px;
+  box-sizing: border-box;
+  transition: 0.35s;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  &:hover {
+    padding: 10px 50px;
+  }
+}
+
+.btns-blue {
+  color: $gray-brand-medium;
+  border: 3px solid $blue-brand;
+  background: rgba(53, 238, 223, 0);
+  font-weight: $font-bold;
+  > span.disabled-text {
+    display: none;
+  }
+  &:hover {
+    background: rgba(53, 238, 223, 1) !important;
+  }
+}
+
+.btns-green {
+  color: $gray-brand-medium;
+  border: 3px solid rgba(182, 239, 46, 1);
+  background: rgba(182, 239, 46, 0);
+  font-weight: $font-bold;
+  > span.disabled-text {
+    display: none;
+  }
+  &:hover {
+    background: rgba(182, 239, 46, 1) !important;
+  }
+}
+
+.btns-gray {
+  border: 2px solid $gray-brand-medium;
+  background: rgba(77, 88, 102, 0);
+
+  &:hover {
+    color: $gray-brand-heavy;
+    border-color: $gray-brand-light;
+    background: rgba(108, 124, 140, 1);
+  }
+}
+
+.btns-disabled {
+  opacity: 0.2;
+  text-decoration: line-through;
+  &:hover {
+    cursor: no-drop;
+    > span.disabled-text {
+      display: block;
+      position: absolute;
+      color: white;
+      margin: 20px 0 0 -32px;
+      font-size: 11px;
+      //opacity: 0.5;
+    }
+  }
+}

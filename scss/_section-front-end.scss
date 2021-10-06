@@ -1,0 +1,138 @@
+section {
+  &#_section-front-end {
+    background: rgba(108, 124, 140, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    @include breakpoint(tablet) {
+      justify-content: center;
+    }
+    @include breakpoint(desktop-wide) {
+      justify-content: space-evenly;
+    }
+
+    .h-section-tittle {
+      @include breakpoint(desktop-wide) {
+        margin-top: calc(0.83em + 80px);
+      }
+    }
+
+    .parallax {
+      background: url(../assets/img/ilya-pavlov-OqtafYT5kTw-unsplash.jpg);
+      width: 100vw;
+      max-width: 100%;
+      max-height: calc(76vh - 80px);
+      box-sizing: border-box;
+      /* Create the parallax scrolling effect */
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      @include breakpoint(mobile-horizontal) {
+        max-height: calc(82vh - 80px);
+        //margin-bottom: 20px;
+      }
+      @include breakpoint(tablet) {
+        max-height: 50vh;
+        height: 40vh;
+      }
+      @include breakpoint(desktop-wide) {
+        max-height: 50vh;
+      }
+
+      .fe-technologies {
+        background: rgba(47, 54, 64, 0.95);
+        width: 100%;
+        height: 100%;
+        //color: $gray-brand-light;
+        color: #8998a7;
+        padding: 20px 10px;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+        @include breakpoint(mobile-horizontal) {
+          flex-direction: row;
+        }
+        @include breakpoint(tablet) {
+          padding: 10% 10px;
+        }
+        @include breakpoint(tablet-horizontal) {
+          padding: 20px 10px;
+        }
+        @include breakpoint(desktop-wide) {
+          padding: 20px 30px;
+          flex-direction: row;
+        }
+        ul {
+          margin: 0 auto;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          padding-inline-start: 15px;
+          @include breakpoint(desktop-wide) {
+            padding-inline-start: 40px;
+            margin: 0;
+          }
+          &:nth-child(2) {
+            padding-inline-start: 15px;
+            @include breakpoint(mobile-horizontal) {
+              padding-inline-start: 40px;
+            }
+            @include breakpoint(tablet) {
+              padding-inline-start: 40px;
+            }
+          }
+          li {
+            line-height: 2.1;
+            @include breakpoint(mobile-horizontal) {
+              font-size: 12px;
+              > img {
+                width: 16px;
+              }
+            }
+            @include breakpoint(tablet) {
+              font-size: 14px;
+              line-height: 3;
+              //display: flex;
+              > img {
+                width: 20px;
+                padding: 0 3px;
+                margin-bottom: -3px;
+              }
+            }
+            @include breakpoint(desktop-wide) {
+              line-height: 3;
+            }
+          }
+        }
+        .empty-star {
+          opacity: 0.3;
+        }
+      }
+    }
+    .btns.btn-github {
+      margin: 20px auto 20px;
+      @include breakpoint(mobile-horizontal) {
+        display: none;
+      }
+      @include breakpoint(tablet) {
+        display: flex;
+      }
+      @include breakpoint(desktop-wide) {
+        margin: 20px auto 30px;
+      }
+      .github-icon {
+        width: 15px;
+        height: 15px;
+        display: inline-block;
+        background: url(../assets/svg/github-gray-heavy.svg);
+        background-size: 100%;
+        margin-right: 5px;
+      }
+    }
+  }
+}

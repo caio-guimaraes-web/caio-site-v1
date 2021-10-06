@@ -1,0 +1,51 @@
+section {
+  &#_section-portfolio {
+    background: rgba(108, 124, 140, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    @include breakpoint(tablet) {
+      justify-content: center;
+    }
+    @include breakpoint(desktop) {
+      justify-content: flex-end;
+    }
+
+    .slide-home-portfolio {
+      //background: rgba(108, 124, 140, 0.05);
+      width: 100vw;
+      max-width: 100%;
+      box-sizing: border-box;
+      height: calc(72vh - 80px);
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      @include breakpoint(desktop-wide) {
+        height: 64vh;
+      }
+    }
+    .btns.btn-behance {
+      margin: 20px auto 20px;
+      @include breakpoint(mobile-horizontal) {
+        display: none;
+      }
+      @include breakpoint(tablet) {
+        display: flex;
+      }
+      @include breakpoint(desktop-wide) {
+        margin: 20px auto 30px;
+      }
+      .behance-icon {
+        width: 15px;
+        height: 15px;
+        display: inline-block;
+        background: url(../assets/svg/behance-gray-heavy.svg);
+        background-size: 100%;
+        margin-right: 5px;
+      }
+    }
+  }
+}

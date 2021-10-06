@@ -1,0 +1,188 @@
+footer {
+  &#_footer {
+    background: $gray-brand-heavy;
+    padding: 40px 30px 20px;
+    height: 85vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include breakpoint(mobile-horizontal) {
+      height: 150vh;
+    }
+    @include breakpoint(tablet) {
+      height: 60vh;
+    }
+    @include breakpoint(tablet-horizontal) {
+      min-height: unset;
+      padding: 30px 30px;
+      height: 30vh;
+      flex-direction: row;
+    }
+    @include breakpoint(desktop-wide) {
+      min-height: unset;
+      padding: 30px 30px;
+      height: 30vh;
+      flex-direction: row;
+    }
+
+    .footer-container-width {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+
+      @include breakpoint(desktop-wide) {
+        width: 25vw;
+      }
+
+      > ul {
+        list-style: none;
+      }
+    }
+
+    .contacts {
+      color: $gray-brand-light;
+      align-items: center;
+
+      @include breakpoint(tablet-horizontal) {
+        align-items: flex-start;
+      }
+      @include breakpoint(desktop-wide) {
+        align-items: flex-start;
+      }
+
+      a {
+        text-decoration: none;
+        color: $gray-brand-light;
+        &:hover {
+          text-decoration: underline;
+          color: #f9fafb;
+        }
+      }
+
+      h6 {
+        font-size: 14px;
+        margin: 10px 0;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        @include breakpoint(tablet-horizontal) {
+          margin: 15px 0;
+          align-items: flex-start;
+        }
+        @include breakpoint(desktop-wide) {
+          flex-direction: row;
+          margin: 15px 0;
+          align-items: center;
+        }
+
+        .whatsApp-number,
+        .email {
+          width: 30px;
+          height: 30px;
+          background: url(../assets/svg/whats-number.svg) no-repeat center
+            center;
+          margin-right: 5px;
+        }
+        .email {
+          background: url(../assets/svg/email.svg) no-repeat center center;
+        }
+      }
+    } //.contacts
+
+    .footer-brand {
+      p {
+        margin-bottom: 0;
+      }
+    }
+
+    .social-links {
+      align-items: center;
+      @include breakpoint(tablet-horizontal) {
+        align-items: flex-end;
+      }
+
+      ul {
+        display: flex;
+        padding: 0;
+
+        @include breakpoint(desktop-wide) {
+          margin-left: 20px;
+        }
+        li {
+          width: 35px;
+          height: 35px;
+          border-radius: 50em;
+          cursor: pointer;
+          transition: 0.2s;
+          margin: 0 10px;
+
+          @include breakpoint(desktop-wide) {
+            margin-left: 20px;
+          }
+          &:hover {
+            box-shadow: 0px 0px 10px #7fff00;
+          }
+          @include breakpoint(tablet-horizontal) {
+            &:nth-child(3) {
+              margin-right: 0;
+            }
+          }
+        }
+        .linkedin-link {
+          background: url(../assets/img/social-media-sprite.png);
+          background-position: 0px -74px;
+          &:hover {
+            background-position: 35px -74px;
+          }
+        }
+        .behance-link {
+          background: url(../assets/img/social-media-sprite.png);
+          background-position: 0px 0px;
+          &:hover {
+            background-position: 35px 0px;
+          }
+        }
+        .github-link {
+          background: url(../assets/img/social-media-sprite.png);
+          background-position: 0px -37px;
+          &:hover {
+            background-position: 35px -37px;
+          }
+        }
+      } //ul
+    } //.social-links
+  } //#_footer
+} //footer
+
+#after-footer {
+  //background: #2c323c;
+  background: $gray-brand-heavy;
+  //text-align: center;
+  line-height: 1.4;
+  padding: 30px;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  height: unset;
+  min-height: calc(30vh - 80px);
+  color: #3c434e;
+  font-size: 12px;
+
+  @include breakpoint(desktop-wide) {
+    display: none;
+  }
+
+  &:hover {
+    color: $gray-brand-medium;
+    cursor: help;
+  }
+  > ul {
+    text-align: left;
+    margin: 0;
+  }
+}

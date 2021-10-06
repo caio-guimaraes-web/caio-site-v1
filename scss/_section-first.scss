@@ -1,0 +1,235 @@
+section {
+  &#_section-first {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 92vh;
+
+    @include breakpoint(tablet) {
+      height: 100vh;
+    }
+    @include breakpoint(desktop-wide) {
+      //justify-content: center;
+      height: 100vh;
+    }
+
+    /* texts */
+    .welcome-texts {
+      z-index: $level8;
+      height: 40vh;
+      //background: rgba(0, 0, 0, 0.2);
+
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+
+      @include breakpoint(mobile-horizontal) {
+        display: none;
+      }
+      @include breakpoint(tablet) {
+        height: 50vh;
+        display: flex;
+        justify-content: flex-start;
+      }
+      @include breakpoint(desktop-wide) {
+        height: calc(50vh - 130px);
+      }
+
+      .h-welcome {
+        font-size: 32px;
+        margin-bottom: 0;
+        margin-left: 10px;
+        max-width: 300px;
+
+        @include breakpoint(desktop-wide) {
+          max-width: 20vw;
+          margin-left: 30px;
+        }
+      }
+      ul {
+        margin: 0 0 10px;
+
+        @include breakpoint(desktop-wide) {
+          margin-left: 30px;
+        }
+        .work-with,
+        li {
+          font-family: $font-secondary;
+        }
+      }
+    }
+    /* design elements */
+    .design-elements {
+      height: 40vh;
+      //background: rgba(0, 0, 0, 0.3);
+      /* positioning white-box-bottom on bottom */
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+
+      @include breakpoint(tablet) {
+        height: 40vh;
+      }
+      @include breakpoint(desktop-wide) {
+        height: 50vh;
+      }
+
+      .welcome-bg {
+        font-weight: $font-bold;
+        color: rgba(255, 255, 255, 0.3);
+        z-index: $level1;
+        position: absolute;
+        top: 55vh;
+        left: 2vw;
+        line-height: 0.8;
+        padding: 0;
+        margin: 0;
+        letter-spacing: -10px;
+        font-size: 92px;
+        /* animation */
+        animation: welcome-text 3.5s ease-in 1.25s 1;
+
+        @include breakpoint(mobile-horizontal) {
+          top: 44vh;
+        }
+        @include breakpoint(tablet) {
+          //top: 70vh;
+          font-size: 170px;
+        }
+        @include breakpoint(desktop) {
+          //top: 70vh;
+          font-size: 194px;
+          top: 58vh;
+        }
+        @include breakpoint(desktop-wide) {
+          font-size: 230px;
+          line-height: 1;
+        }
+      }
+      .white-box-bottom {
+        z-index: $level2;
+        width: 100vw;
+        max-width: 100%;
+        box-sizing: border-box;
+        height: 10vh;
+        background: #fff;
+        position: relative;
+
+        @include breakpoint(desktop-wide) {
+          height: 10vh;
+        }
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        > span {
+          width: 24px;
+          height: 30px;
+          box-sizing: border-box;
+          cursor: pointer;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          &:hover {
+            padding-top: 3px;
+          }
+          &:active {
+            padding-top: 5px;
+          }
+        }
+        .buildings {
+          position: absolute;
+          //top: -21vw;
+          top: -10vh;
+          //top: -76px;
+          width: 70vw;
+
+          @include breakpoint(mobile-horizontal) {
+            top: -32vh;
+          }
+          @include breakpoint(tablet) {
+            top: -15vh;
+          }
+          @include breakpoint(tablet-horizontal) {
+            top: -26vh;
+          }
+          @include breakpoint(desktop) {
+            width: 40vw;
+            top: -19vh;
+          }
+          @include breakpoint(desktop-wide) {
+            width: 34vw;
+            top: -155px;
+          }
+        }
+        .cloud-left,
+        .cloud-right {
+          position: absolute;
+          width: 47vw;
+          top: -6vh;
+          //left: 2vw;
+          left: 12vw;
+          opacity: 0.3;
+          /* animation */
+          animation: cloud 3s ease-in 1.5s 1;
+
+          @include breakpoint(mobile-horizontal) {
+            top: -17vh;
+          }
+          @include breakpoint(tablet) {
+            top: -9vh;
+          }
+          @include breakpoint(tablet-horizontal) {
+            top: -17vh;
+          }
+          @include breakpoint(desktop) {
+            top: -20vh;
+          }
+          @include breakpoint(desktop-wide) {
+            top: -194px;
+            left: 1vw;
+          }
+        }
+        .cloud-right {
+          left: unset;
+          //right: 0vw;
+          right: 13vw;
+          @include breakpoint(tablet) {
+            //right: 1vw;
+          }
+          @include breakpoint(desktop-wide) {
+            left: unset;
+            right: 1vw;
+          }
+        }
+        .spaceship {
+          position: absolute;
+          top: -13vh;
+          width: 15vw;
+          /* animation */
+          animation: spaceship 3s linear 1s 1 backwards;
+
+          @include breakpoint(mobile-horizontal) {
+            width: 10vw;
+            top: -26vh;
+          }
+          @include breakpoint(tablet) {
+            top: -14vh;
+          }
+          @include breakpoint(tablet-horizontal) {
+            width: 9vw;
+            top: -23vh;
+          }
+          @include breakpoint(desktop) {
+            width: 6vw;
+            top: -20vh;
+          }
+          @include breakpoint(desktop-wide) {
+            top: -155px;
+            width: 80px;
+          }
+        }
+      } //.white-box-bottom
+    } //.design-elements
+  } // #first-section
+}

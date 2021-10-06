@@ -1,0 +1,136 @@
+section {
+  &#_section-testimony {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    .h-section-tittle {
+      margin-bottom: 20px;
+      @include breakpoint(desktop-wide) {
+        margin-top: calc(0.83em + 80px);
+      }
+    }
+
+    .testimonies {
+      //background: coral;
+      box-sizing: border-box;
+      width: 100vw;
+      max-width: 100%;
+      height: 36vh;
+
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      @include breakpoint(mobile-horizontal) {
+        height: 60vh;
+      }
+      @include breakpoint(tablet) {
+        height: 50vh;
+      }
+      @include breakpoint(tablet-horizontal) {
+        height: 33vh;
+      }
+      @include breakpoint(desktop) {
+        height: 30vh;
+      }
+
+      .testimonies-item {
+        width: 90vw;
+        text-align: center;
+
+        @include breakpoint(mobile-horizontal) {
+          width: 80vw;
+        }
+        @include breakpoint(tablet) {
+          width: 20vw;
+        }
+        @include breakpoint(desktop-wide) {
+          width: 20vw;
+        }
+
+        .testimony-p {
+          font-size: 13px;
+          line-height: 1.4;
+          @include breakpoint(mobile-horizontal) {
+            font-size: 12px;
+          }
+          @include breakpoint(desktop-wide) {
+            font-size: 14px;
+          }
+        }
+
+        .witness {
+          font-style: italic;
+          @include breakpoint(mobile-horizontal) {
+            font-size: 12px;
+          }
+        }
+
+        div.gradient-brand-primary {
+          padding: 4px;
+          border-radius: 50em;
+          display: inline-flex;
+
+          img {
+            border-radius: 50em;
+            width: 80px;
+          }
+        }
+      }
+    }
+
+    .parallax {
+      background: url(../assets/img/daniel-korpai-mxPiMiz7KCo-unsplash.jpg);
+      width: 100vw;
+      max-width: 100%;
+      height: 30vh;
+      /* Create the parallax scrolling effect */
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+
+      @include breakpoint(mobile-horizontal) {
+        display: none;
+      }
+      @include breakpoint(tablet) {
+        display: block;
+      }
+
+      .hero-banner {
+        background: rgba(47, 54, 64, 0.9);
+        box-sizing: border-box;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        width: 100%;
+        height: 100%;
+
+        .H-B-tittle {
+          color: #fff;
+          margin: 0 0 30px;
+          max-width: 450px;
+          text-align: center;
+          @include breakpoint(desktop-wide) {
+            margin: 0 0 40px;
+          }
+        }
+        .btns-blue,
+        .btns-green {
+          color: #b5b5b5;
+          background: rgba(47, 54, 64, 0.4);
+          &:hover {
+            color: $gray-brand-heavy;
+          }
+        }
+        .btns-green {
+          margin-left: 10px;
+        }
+      } //hero-banner
+    } //parallax
+  }
+}

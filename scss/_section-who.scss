@@ -1,0 +1,101 @@
+section {
+  &#_section-who {
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+
+    @include breakpoint(tablet) {
+      justify-content: center;
+    }
+    @include breakpoint(desktop-wide) {
+      justify-content: center;
+    }
+
+    .section-img-main {
+      //background: brown;
+      //max-width: 100%;
+      width: 94vw;
+      height: calc(25vh - 80px);
+      overflow: hidden;
+      /* -------- */
+      /* Create the parallax scrolling effect */
+      /* background: url(../assets/img/arte-capa-2021_light.jpg);
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover; */
+      /* -------- */
+      @include breakpoint(mobile-horizontal) {
+        display: none;
+      }
+      @include breakpoint(tablet) {
+        display: block;
+        height: calc(40vh - 80px);
+        width: 90vw;
+      }
+      @include breakpoint(tablet-horizontal) {
+        height: calc(55vh - 80px);
+      }
+      @include breakpoint(desktop-wide) {
+        width: 60vw;
+        height: 40vh;
+        margin-top: 100px;
+      }
+      img {
+        margin-top: -30px;
+        @include breakpoint(desktop-wide) {
+          margin-top: -50px;
+        }
+      }
+    }
+    .who {
+      //background: blueviolet;
+      display: flex;
+      height: 75vh;
+      width: 94vw;
+      justify-content: space-evenly;
+      flex-direction: column;
+
+      @include breakpoint(tablet) {
+        height: 30vh;
+        width: 90vw;
+      }
+      @include breakpoint(desktop-wide) {
+        height: 30vh;
+        width: 60vw;
+        flex-direction: row;
+        align-items: center;
+      }
+
+      .h-section-tittle {
+        margin: 20px 0;
+        @include breakpoint(desktop-wide) {
+          margin: 2% 30px auto 0;
+        }
+      }
+      div {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 20px;
+
+        img {
+          width: 60px;
+          height: 60px;
+          border-radius: 50px;
+        }
+        p {
+          width: calc(100% - 70px);
+          margin: 0;
+          @include breakpoint(tablet) {
+            width: calc(100% - 90px);
+          }
+          @include breakpoint(desktop-wide) {
+            width: 60%;
+          }
+        }
+      }
+    }
+  }
+}
